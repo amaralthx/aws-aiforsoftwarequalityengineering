@@ -1,11 +1,15 @@
 # Backup do progresso no estágio da Compass UOL
 
-Este repositório servirá para consulta de anotações e subir projetos do estágio, todas as informações importantes estarão aqui.
+Este repositório serve como um backup do meu progresso durante a trilha **AWS & AI for Softawre Quality Engineering**, contendo anotações e projetos importantes.
 
 ## Como Usar
 
 Dentro da pasta `Documentos`, você encontrará a seguinte estrutura:
 
-* **Collections:** Contém duas Collections do Postman com as atividades relacionadas ao PetStore e ao ServeREST.
-* **Sprints 1, 2 e 3:** Esta pasta agrupa os resumos e anotações dessas três primeiras Sprints, que estão acessíveis através de um link do Confluence.
-* **Sprint 4:** Esta pasta é dedicada ao Challenge da Sprint 4, onde foi criado um Planejamento de Testes no Confluence com report de bug no Jira e automação de testes no Postman.
+* **00. Extra - leituras complementares:** Contém duas leituras indispensáveis para todo profissional de QA.
+* **01. Entregas de Março:** Apresenta resumos do curso "Início Rápido em Teste de Software e QA" e a atividade de refinamento da User Story com mapa mental.
+* **02. Entregas de Abril:** Inclui a apresentação sobre Análise e Modelagem de Teste, o plano de teste elaborado com mapa mental e o modelo de report de bug feitos pela squad.
+* **03. Entregas de Maio:**
+    * **Challenge 1:** Apresenta o planejamento de teste, o report de bug registrado no Jira e a collection do Postman com testes automatizados.
+    * **Collection e Mapa Mental API Petstore:** Contém a collection do Postman e o mapa mental da API Petstore.
+    * **Calculadora:** (Em breve) Conterá a atividade desenvolvida nesta semana.
