@@ -1,6 +1,6 @@
 # Backup do progresso no estágio da Compass UOL
 
-Este repositório serve como um backup do meu progresso durante a trilha **AWS & AI for Softawre Quality Engineering**, contendo anotações e projetos importantes.
+Este repositório serve como um backup do meu progresso durante a trilha **AWS & AI for Software Quality Engineering**, contendo anotações e projetos importantes.
 
 ## Como Usar
 
