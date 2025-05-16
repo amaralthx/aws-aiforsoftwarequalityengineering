@@ -9,6 +9,7 @@ Esta calculadora oferece as seguintes operações:
 * Potenciação
 * Módulo
 
+Testes implementados: Cada operação é validada por testes unitários que cobrem cenários válidos, inválidos e casos extremos.
 
 # Instruções de Teste
 
@@ -17,9 +18,7 @@ Esta calculadora oferece as seguintes operações:
 - Biblioteca pytest instalada.
 
 ## Passo a Passo para Executar os Testes
-1. Navegue até a pasta do projeto:
-```bash
-cd "C:\Users\thais\OneDrive\Documentos\AWS & AI for Software Quality Engineering\meu-projeto-de-teste\Documentos\03. Entregas de Maio\Calculadora TDD Python"
+1. Navegue até a pasta do projeto
 
 2. Instale o pytest (se ainda não instalado):
 pip install pytest
