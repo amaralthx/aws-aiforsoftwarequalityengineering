@@ -12,4 +12,4 @@ Dentro da pasta `Documentos`, você encontrará a seguinte estrutura:
 * **03. Entregas de Maio:**
     * **Challenge 1:** Apresenta o planejamento de teste, o report de bug registrado no Jira e a collection do Postman com testes automatizados.
     * **Collection e Mapa Mental API Petstore:** Contém a collection do Postman e o mapa mental da API Petstore.
-    * **Calculadora:** (Em breve) Conterá a atividade desenvolvida nesta semana.
+    * **Calculadora TDD Python:** Operações básicas e testes unitários com pytest
