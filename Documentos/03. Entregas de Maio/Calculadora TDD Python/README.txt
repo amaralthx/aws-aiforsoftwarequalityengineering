@@ -1,4 +1,16 @@
-# Calculadora TDD Python - Instruções de Teste
+# Calculadora TDD Python
+
+Esta calculadora oferece as seguintes operações:
+
+* Adição
+* Subtração
+* Multiplicação
+* Divisão
+* Potenciação
+* Módulo
+
+
+# Instruções de Teste
 
 ## Pré-requisitos
 - Python 3 instalado.
