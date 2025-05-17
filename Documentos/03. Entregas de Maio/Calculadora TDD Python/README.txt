@@ -17,10 +17,14 @@ Testes implementados: Cada operação é validada por testes unitários que cobr
 - Python 3 instalado.
 - Biblioteca pytest instalada.
 
-## Passo a Passo para Executar os Testes
-1. Navegue até a pasta do projeto
+## Passo a Passo para Executar os Testes (via Git)
+1. Clone o repositório (git clone https://github.com/amaralthx/aws-aiforsoftwarequalityengineering.git
+cd aws-aiforsoftwarequalityengineering/Documentos/03.\ Entregas\ de\ Maio/Calculadora\ TDD\ Python)
 
-2. Instale o pytest (se ainda não instalado):
+2. Instale o pytest (se ainda não instalado) e configure o ambiente virtual (recomendado):
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate    # Windows
 pip install pytest
 
 3. Execute os testes com o comando:
