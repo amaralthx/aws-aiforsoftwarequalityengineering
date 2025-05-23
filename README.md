@@ -1,19 +1,21 @@
-<<<<<<< HEAD
-# Backup do progresso no estágio da Compass UOL
+# Testes Automatizados com Robot Framework
 
-Este repositório serve como um backup do meu progresso durante a trilha **AWS & AI for Software Quality Engineering**, contendo anotações e projetos importantes.
+Este projeto contém testes automatizados utilizando o **Robot Framework** aplicados à API [Reqres.in](https://reqres.in/) como parte da trilha **AWS & AI for Software Quality Engineering** do estágio na Compass UOL.
 
-## Como Usar
+## Estrutura do Projeto
 
-Dentro da pasta `Documentos`, você encontrará a seguinte estrutura:
+- `payloads/`: arquivos `.json` com os dados para requisições da API (ex: criação de usuário, login, atualização).
+- `resources/`: arquivos `.robot` com palavras-chave personalizadas (keywords reutilizáveis).
+- `tests/`: arquivos `.robot` com os cenários de teste.
+- `venv/`: ambiente virtual Python (não incluído no controle de versão).
+- `requirements.txt`: dependências do projeto.
+- `output.xml`, `report.html`, `log.html`: arquivos gerados automaticamente com os resultados da execução dos testes.
 
-* **00. Extra - leituras complementares:** Contém duas leituras indispensáveis para todo profissional de QA.
-* **01. Entregas de Março:** Apresenta resumos do curso "Início Rápido em Teste de Software e QA" e a atividade de refinamento da User Story com mapa mental.
-* **02. Entregas de Abril:** Inclui a apresentação sobre Análise e Modelagem de Teste, o plano de teste elaborado com mapa mental e o modelo de report de bug feitos pela squad.
-* **03. Entregas de Maio:**
-    * **Challenge 1:** Apresenta o planejamento de teste, o report de bug registrado no Jira e a collection do Postman com testes automatizados.
-    * **Collection e Mapa Mental API Petstore:** Contém a collection do Postman e o mapa mental da API Petstore.
-    * **Calculadora TDD Python:** Operações básicas e testes unitários com pytest
-=======
-"# Projeto Robot Framework" 
->>>>>>> f592e36 (Commit inicial)
+## Como Executar os Testes
+
+1. **Clone o repositório**:
+
+   ```bash
+   git clone https://github.com/amaralthx/aws-aiforsoftwarequalityengineering.git
+   cd aws-aiforsoftwarequalityengineering
+   git checkout projeto-completo
