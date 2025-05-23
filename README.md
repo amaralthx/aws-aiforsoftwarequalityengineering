@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Backup do progresso no estágio da Compass UOL
 
 Este repositório serve como um backup do meu progresso durante a trilha **AWS & AI for Software Quality Engineering**, contendo anotações e projetos importantes.
@@ -13,3 +14,6 @@ Dentro da pasta `Documentos`, você encontrará a seguinte estrutura:
     * **Challenge 1:** Apresenta o planejamento de teste, o report de bug registrado no Jira e a collection do Postman com testes automatizados.
     * **Collection e Mapa Mental API Petstore:** Contém a collection do Postman e o mapa mental da API Petstore.
     * **Calculadora TDD Python:** Operações básicas e testes unitários com pytest
+=======
+"# Projeto Robot Framework" 
+>>>>>>> f592e36 (Commit inicial)
