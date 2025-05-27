@@ -55,3 +55,16 @@ Cenário: PATCH Atualizar Usuário Parcialmente
     Should Be Equal    ${body}    Senior Developer
 
     # Linha de comentário para testar Pull Request
+    
+Validar API Endpoint
+    ${response}=    GET On Session    mysession    /api/endpoint
+    Validar Status Code    ${response}    200
+    
+    # Separate test for response body
+    Validar Corpo Da Resposta    ${response}
+    
+    # Separate test for specific key
+    Validar Chave Especifica Na Resposta    ${response}    id
+    
+    # Separate test for response time
+    Validar Tempo De Resposta    ${response}    1.5
