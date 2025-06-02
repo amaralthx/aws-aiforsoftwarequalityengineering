@@ -1,32 +1,43 @@
 # Entregas de Junho
 
+Esta pasta contém os artefatos de teste para o mês de junho.
+
 ## Conteúdo
 - `Planejamento de Teste ServeRest.pdf`: Documento de planejamento de testes para a API Serverest
 
-## Mudanças realizadas
-Principais mudanças no plano de testes, com base nas instruções e nos problemas identificados no ciclo anterior:
+## Mudanças Realizadas no Plano de Testes
 
-## Priorização Baseada em Risco Duplo:
-#Anteriormente: Priorização P1/P2, com P1s não concluídos.
-#Agora: Introdução de uma classificação explícita de Impacto (Crítico/Alto/Médio/Baixo) e Probabilidade (Alta/Média/Baixa) para cada cenário de risco.
-#Resultado: Uma prioridade P1 agora significa Crítico + Alta Probabilidade, focando os esforços nos cenários de maior risco e maior chance de ocorrência.
+Principais melhorias implementadas com base nas instruções e problemas identificados no ciclo anterior:
 
-## Regra de Execução Clara para P1:
-#Anteriormente: Nenhuma regra explícita para a execução de P1s.
-#Agora: Definido que P1 (Impacto Crítico + Probabilidade Alta) deve representar 70% da primeira etapa de execução.
-#Resultado: Garante que os testes mais importantes sejam executados prioritariamente.
+### 1. Priorização Baseada em Risco Duplo
+- **Anteriormente**: Priorização P1/P2 com itens críticos não concluídos  
+- **Agora**: Classificação explícita por:
+  - **Impacto** (Crítico/Alto/Médio/Baixo) - consequência da falha
+  - **Probabilidade** (Alta/Média/Baixa) - frequência esperada de uso
+- **Resultado**: Prioridade P1 = Impacto Crítico + Probabilidade Alta
 
-## Definição Formal de Cobertura de Testes:
-#Anteriormente: Cobertura confundida com status de execução.
-#Agora: Cobertura definida por uma fórmula explícita.
-#Resultado: Foco na cobertura de funcionalidades de risco real, em vez de apenas contar cenários executados.
+### 2. Regra de Execução Clara para P1
+- **Anteriormente**: Sem regra explícita para execução de P1  
+- **Agora**: 70% do esforço inicial alocado para P1  
+- **Resultado**: Garantia de execução prioritária dos testes mais críticos
 
-## Inclusão de Riscos Não Cobertos Justificados:
-#Anteriormente: Não havia menção ou justificativa para riscos não testados.
-#Agora: A matriz de risco incluirá justificativas para riscos não cobertos, aceitos no escopo ou adiados.
-#Resultado: Maior transparência sobre as áreas não testadas e a aceitação de risco.
+### 3. Definição Formal de Cobertura de Testes
+- **Anteriormente**: Cobertura confundida com status de execução  
+- **Agora**: Fórmula clara de cobertura:  
+  `(Funcionalidades de risco ≥ Médio cobertas / Total de funcionalidades de risco ≥ Médio) × 100`  
+- **Resultado**: Métrica focada em proteção de funcionalidades críticas
 
-##Critérios Claros para Automação (Postman):
-#Anteriormente: Não havia critérios explícitos para seleção de testes a serem automatizados.
-#Agora: Seleção baseada em Repetibilidade, Complexidade Manual e Valor de Negócio.
-#Resultado: Automação focada em testes que trarão maior retorno sobre o investimento, como regressão, smoke tests e fluxos de negócio complexos/críticos.
+### 4. Inclusão de Riscos Não Cobertos Justificados
+- **Anteriormente**: Riscos não testados não documentados  
+- **Agora**: Matriz de risco inclui:  
+  - Lista de riscos aceitos/adiados  
+  - Justificativa para cada decisão  
+- **Resultado**: Transparência sobre lacunas de teste
+
+### 5. Critérios Claros para Automação
+- **Anteriormente**: Seleção sem critérios definidos  
+- **Agora**: Automação baseada em:  
+  - **Repetibilidade**: Testes de regressão/smoke  
+  - **Complexidade Manual**: Fluxos com >5 passos  
+  - **Valor de Negócio**: Funcionalidades core  
+- **Resultado**: Automação estratégica com maior ROI
