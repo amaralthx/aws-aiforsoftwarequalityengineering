@@ -1,0 +1,8 @@
+aws-aiforsoftwarequalityengineering/
+venv/
+log.html
+output.xml
+report.html
+exclude.txt
+__pycache__/
+repositorio-compass/
