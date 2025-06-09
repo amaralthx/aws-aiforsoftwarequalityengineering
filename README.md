@@ -1,11 +1,36 @@
-# Backup do progresso no estágio da Compass UOL
+# Backup do Progresso no Estágio da Compass UOL
 
-Este repositório servirá para consulta de anotações e subir projetos do estágio, todas as informações importantes estarão aqui.
+Este repositório serve como um **backup do meu progresso** durante a trilha **AWS & AI for Software Quality Engineering**, contendo anotações e projetos importantes.
 
 ## Como Usar
 
 Dentro da pasta `Documentos`, você encontrará a seguinte estrutura:
 
-* **Collections:** Contém duas Collections do Postman com as atividades relacionadas ao PetStore e ao ServeREST.
-* **Sprints 1, 2 e 3:** Esta pasta agrupa os resumos e anotações dessas três primeiras Sprints, que estão acessíveis através de um link do Confluence.
-* **Sprint 4:** Esta pasta é dedicada ao Challenge da Sprint 4, onde foi criado um Planejamento de Testes no Confluence com report de bug no Jira e automação de testes no Postman.
+### 00. Extra – Leituras Complementares
+Contém **duas leituras indispensáveis** para todo profissional de QA.
+
+### 01. Entregas de Março
+- Resumos do curso **"Início Rápido em Teste de Software e QA"**  
+- Atividade de **refinamento da User Story** com mapa mental
+
+### 02. Entregas de Abril
+- Apresentação sobre **Análise e Modelagem de Teste**  
+- **Plano de teste** elaborado com mapa mental  
+- Modelo de **report de bug** feito pela squad
+
+### 03. Entregas de Maio
+- **Challenge 1**:
+  - Planejamento de teste
+  - Report de bug registrado no Jira
+  - Collection do Postman com testes automatizados
+- **Collection e Mapa Mental API Petstore**:
+  - Collection do Postman
+  - Mapa mental da API Petstore
+- **Calculadora TDD Python**:
+  - Operações básicas
+  - Testes unitários com `pytest`
+
+---
+
+> 💡 O restante do conteúdo completo do projeto está disponível na branch [`projeto-completo`](https://github.com/amaralthx/aws-aiforsoftwarequalityengineering/tree/projeto-completo).
+
