@@ -13,6 +13,7 @@ Este diretório contém os artefatos relacionados aos testes da API Serverest, d
 * Evoluir a automação dos testes da API Serverest utilizando Python/Pytest.
 * Incluir no planejamento de testes (PDF) a seção sobre a configuração da API Serverest e a execução de testes automatizados em máquinas virtuais.
 * Vincular bugs nos Test Cases (Jira).
+* Adicionar GitHub Actions
 
 ## Links Úteis
 
