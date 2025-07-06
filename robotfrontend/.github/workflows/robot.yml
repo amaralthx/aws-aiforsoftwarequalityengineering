@@ -10,7 +10,6 @@ jobs:
   robot:
     name: Executar testes Robot Framework
     runs-on: ubuntu-latest
-
     env:
       MONGO_URI: ${{ secrets.MONGO_URI }}
       DB_NAME: ${{ secrets.DB_NAME }}
@@ -35,10 +34,4 @@ jobs:
 
       - name: Executar testes Robot Framework
         run: |
-          robot -d logs --loglevel TRACE resources/tests/signup.robot
-
-      - name: Upload de logs de execução
-        uses: actions/upload-artifact@v4
-        with:
-          name: robot-logs
-          path: robotfrontend/logs/
+          robot -d results tests/
