@@ -1,6 +1,0 @@
-{
-    "python.testing.pytestEnabled": true,
-    "python.testing.pytestArgs": ["tests", "--rootdir=."],
-    "python.autoComplete.extraPaths": ["./calculadora"],
-    "python.analysis.extraPaths": ["./calculadora"]
-}
