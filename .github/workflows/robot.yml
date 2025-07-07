@@ -14,6 +14,7 @@ jobs:
       MONGO_URI: ${{ secrets.MONGO_URI }}
       DB_NAME: ${{ secrets.DB_NAME }}
       COLLECTION_NAME: ${{ secrets.COLLECTION_NAME }}
+      PYTHONPATH: ${{ github.workspace }}/robotfrontend
 
     steps:
       - name: Checkout do repositório
