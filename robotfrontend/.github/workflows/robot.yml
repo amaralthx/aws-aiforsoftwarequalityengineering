@@ -5,19 +5,18 @@ on:
     branches: [main, develop, cinema-challenge]
   pull_request:
     branches: [main, develop, cinema-challenge]
+  workflow_dispatch:
 
 jobs:
   robot:
-    name: Executar testes Robot Framework
     runs-on: ubuntu-latest
+
     env:
       MONGO_URI: ${{ secrets.MONGO_URI }}
       DB_NAME: ${{ secrets.DB_NAME }}
       COLLECTION_NAME: ${{ secrets.COLLECTION_NAME }}
-
-    defaults:
-      run:
-        working-directory: robotfrontend
+      PYTHONPATH: ${{ github.workspace }}/robotfrontend
+      ROBOT_BROWSER_HEADLESS: true
 
     steps:
       - name: Checkout do repositório
@@ -28,10 +27,36 @@ jobs:
         with:
           python-version: 3.11
 
-      - name: Instalar dependências do projeto
+      - name: Instalar dependências do projeto Robot Framework
         run: |
-          pip install -r requirements.txt
+          pip install -r robotfrontend/requirements.txt
+
+      - name: Inicializar RF Browser
+        run: |
+          rfbrowser init
+
+      - name: Instalar dependências do frontend
+        run: |
+          cd frontend
+          npm install
+
+      - name: Iniciar o frontend com npm start (em background)
+        run: |
+          cd frontend
+          npm start &
+        env:
+          PORT: 3002
+
+      - name: Aguardar frontend subir
+        run: |
+          npx wait-on http://localhost:3002
 
       - name: Executar testes Robot Framework
         run: |
-          robot -d results tests/
+          robot -d robotfrontend/logs --loglevel TRACE robotfrontend/resources/tests/signup.robot
+
+      - name: Upload de logs de execução
+        uses: actions/upload-artifact@v4
+        with:
+          name: robot-logs
+          path: robotfrontend/logs/
