@@ -11,3 +11,4 @@ Obter usuário por email
     [Arguments]    ${email}
     ${user}    Get User    ${email}
     RETURN    ${user}
+
