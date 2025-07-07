@@ -29,6 +29,10 @@ jobs:
         run: |
           pip install -r robotfrontend/requirements.txt
 
+      - name: Inicializar RF Browser
+        run: |
+          rfbrowser init
+
       - name: Executar testes Robot Framework
         run: |
           robot -d robotfrontend/logs --loglevel TRACE robotfrontend/resources/tests/signup.robot
@@ -38,3 +42,4 @@ jobs:
         with:
           name: robot-logs
           path: robotfrontend/logs/
+✅ 2. Sobre ${usuario} / ${user} não encontrado
