@@ -15,6 +15,7 @@ jobs:
       DB_NAME: ${{ secrets.DB_NAME }}
       COLLECTION_NAME: ${{ secrets.COLLECTION_NAME }}
       PYTHONPATH: ${{ github.workspace }}/robotfrontend
+      ROBOT_BROWSER_HEADLESS: true
 
     steps:
       - name: Checkout do repositório
