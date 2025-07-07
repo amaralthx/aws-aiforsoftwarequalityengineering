@@ -1,0 +1,90 @@
+{"level":30,"time":"2025-07-03T23:45:45.399Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Listening on 127.0.0.1:29732"}
+(node:11888) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2025-07-03T23:45:45.548Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-07-03T23:45:46.388Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Adding browser to stack: chromium, version: 136.0.7103.25"}
+{"level":30,"time":"2025-07-03T23:45:46.398Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-07-03T23:45:46.398Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-07-03T23:45:46.409Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-07-03T23:45:46.410Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2025-07-03T23:45:46.456Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Changed active context"}
+{"level":30,"time":"2025-07-03T23:45:47.348Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Video path: undefined"}
+{"level":30,"time":"2025-07-03T23:45:47.349Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Changed active page"}
+{"level":30,"time":"2025-07-03T23:45:48.171Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method newPage"}
+{"level":30,"time":"2025-07-03T23:45:52.868Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-07-03T23:45:52.869Z","pid":11888,"hostname":"LAPTOP-G68C850E","Take screenshot with options: ":{"path":"C:\\Users\\thais\\OneDrive\\Documentos\\Cinema APP vscode\\robotfrontend\\logs\\browser\\screenshot\\antes_do_teste.png.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2025-07-03T23:45:53.100Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-07-03T23:45:53.112Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method click"}
+{"level":30,"time":"2025-07-03T23:45:53.112Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Strict mode is enabled, find Locator with text=Cadastrar in page."}
+{"level":30,"time":"2025-07-03T23:45:53.326Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method click"}
+{"level":30,"time":"2025-07-03T23:45:53.334Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-07-03T23:45:53.334Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Strict mode is enabled, find Locator with id=name in page."}
+{"level":30,"time":"2025-07-03T23:45:53.347Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-07-03T23:45:53.356Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-07-03T23:45:53.356Z","pid":11888,"hostname":"LAPTOP-G68C850E","Take screenshot with options: ":{"path":"C:\\Users\\thais\\OneDrive\\Documentos\\Cinema APP vscode\\robotfrontend\\logs\\browser\\screenshot\\antes_preencher_form.png.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2025-07-03T23:45:53.566Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-07-03T23:45:53.576Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method waitForElementState"}
+{"level":30,"time":"2025-07-03T23:45:53.576Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Strict mode is enabled, find Locator with id=name in page."}
+{"level":30,"time":"2025-07-03T23:45:53.584Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method waitForElementState"}
+{"level":30,"time":"2025-07-03T23:45:53.593Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-07-03T23:45:53.593Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Strict mode is enabled, find Locator with id=name in page."}
+{"level":30,"time":"2025-07-03T23:45:53.647Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method fillText"}
+{"level":30,"time":"2025-07-03T23:45:53.655Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-07-03T23:45:53.655Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Strict mode is enabled, find Locator with id=email in page."}
+{"level":30,"time":"2025-07-03T23:45:53.684Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method fillText"}
+{"level":30,"time":"2025-07-03T23:45:53.690Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-07-03T23:45:53.691Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Strict mode is enabled, find Locator with id=password in page."}
+{"level":30,"time":"2025-07-03T23:45:53.714Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method fillText"}
+{"level":30,"time":"2025-07-03T23:45:53.719Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method fillText"}
+{"level":30,"time":"2025-07-03T23:45:53.719Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Strict mode is enabled, find Locator with id=confirmPassword in page."}
+{"level":30,"time":"2025-07-03T23:45:53.764Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method fillText"}
+{"level":30,"time":"2025-07-03T23:45:53.772Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-07-03T23:45:53.772Z","pid":11888,"hostname":"LAPTOP-G68C850E","Take screenshot with options: ":{"path":"C:\\Users\\thais\\OneDrive\\Documentos\\Cinema APP vscode\\robotfrontend\\logs\\browser\\screenshot\\form_preenchido.png.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2025-07-03T23:45:53.955Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-07-03T23:45:53.961Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method click"}
+{"level":30,"time":"2025-07-03T23:45:53.961Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Strict mode is enabled, find Locator with css=button[type=submit] in page."}
+{"level":30,"time":"2025-07-03T23:45:54.042Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method click"}
+{"level":30,"time":"2025-07-03T23:45:54.054Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-07-03T23:45:54.054Z","pid":11888,"hostname":"LAPTOP-G68C850E","Take screenshot with options: ":{"path":"C:\\Users\\thais\\OneDrive\\Documentos\\Cinema APP vscode\\robotfrontend\\logs\\browser\\screenshot\\apos_submissao.png.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2025-07-03T23:45:54.615Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-07-03T23:45:58.958Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-07-03T23:45:58.958Z","pid":11888,"hostname":"LAPTOP-G68C850E","Take screenshot with options: ":{"path":"C:\\Users\\thais\\OneDrive\\Documentos\\Cinema APP vscode\\robotfrontend\\logs\\browser\\screenshot\\apos_cadastro.png.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2025-07-03T23:45:59.114Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-07-03T23:46:07.863Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2025-07-03T23:46:07.863Z","pid":11888,"hostname":"LAPTOP-G68C850E","Take screenshot with options: ":{"path":"C:\\Users\\thais\\OneDrive\\Documentos\\Cinema APP vscode\\robotfrontend\\logs\\browser\\screenshot\\apos_teste.png.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2025-07-03T23:46:07.987Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2025-07-03T23:46:07.993Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method closeBrowser"}
+{"level":30,"time":"2025-07-03T23:46:08.037Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Removed page=198d9b66-c4e0-4865-9b06-87602e4d1d42 from context=498adadd-b747-41d2-9242-c601f79752ab page stack"}
+{"level":30,"time":"2025-07-03T23:46:08.367Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method closeBrowser"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Python313\Lib\site-packages\Browser\wrapper\index.js:12226:15)
+    at PlaywrightServer.getActiveBrowser (C:\Python313\Lib\site-packages\Browser\wrapper\index.js:13122:59)
+    at PlaywrightServer.setTimeout (C:\Python313\Lib\site-packages\Browser\wrapper\index.js:13370:57)
+    at Object.onReceiveHalfClose (C:\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1461:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:575:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:615:14)
+    at ServerHttp2Stream.<anonymous> (C:\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:382:18)
+    at ServerHttp2Stream.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2025-07-03T23:46:08.374Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-07-03T23:46:08.375Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method getBrowserCatalog"}
+================= Original suppressed error =================
+Error: Browser has been closed.
+    at PlaywrightState.getActiveBrowser (C:\Python313\Lib\site-packages\Browser\wrapper\index.js:12226:15)
+    at PlaywrightServer.getActiveBrowser (C:\Python313\Lib\site-packages\Browser\wrapper\index.js:13122:59)
+    at PlaywrightServer.setTimeout (C:\Python313\Lib\site-packages\Browser\wrapper\index.js:13370:57)
+    at Object.onReceiveHalfClose (C:\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server.js:1461:25)
+    at BaseServerInterceptingCall.maybePushNextMessage (C:\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:575:31)
+    at BaseServerInterceptingCall.handleEndEvent (C:\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:615:14)
+    at ServerHttp2Stream.<anonymous> (C:\Python313\Lib\site-packages\Browser\wrapper\node_modules\@grpc\grpc-js\build\src\server-interceptors.js:382:18)
+    at ServerHttp2Stream.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+=============================================================
+{"level":30,"time":"2025-07-03T23:46:08.385Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method getBrowserCatalog"}
+{"level":30,"time":"2025-07-03T23:46:08.385Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method getBrowserCatalog"}
+{"level":30,"time":"2025-07-03T23:46:08.462Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2025-07-03T23:46:08.462Z","pid":11888,"hostname":"LAPTOP-G68C850E","msg":"End of node method closeAllBrowsers"}

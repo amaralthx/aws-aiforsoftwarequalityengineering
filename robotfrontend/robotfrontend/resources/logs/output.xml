@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.4 on win32)" generated="2025-07-03T14:00:49.155523" rpa="false" schemaversion="5">
+<suite id="s1" name="Create" source="C:\Users\thais\OneDrive\Documentos\Cinema APP vscode\robotfrontend\resources\tests\tasks\create.robot">
+<test id="s1-t1" name="Deve cadastrar, selecionar filme e liberar assentos" line="10">
+<kw name="Start Session" owner="base" type="SETUP">
+<kw name="New Browser" owner="Browser">
+<msg time="2025-07-03T14:00:50.550546" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\thais\\OneDrive\\Documentos\\Cinema APP vscode\\robotfrontend\\resources\\logs\\browser\\traces\\temp\\d395d590-fe59-476a-a7ec-7ae1b5c99305"}</msg>
+<msg time="2025-07-03T14:00:50.635921" level="INFO">Starting Browser process C:\Python313\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:10759</msg>
+<msg time="2025-07-03T14:00:54.357787" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\thais\\OneDrive\\Documentos\\Cinema APP vscode\\robotfrontend\\resources\\logs\\browser\\traces\\temp\\d395d590-fe59-476a-a7ec-7ae1b5c99305"}</msg>
+<arg>browser=chromium</arg>
+<arg>headless=False</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-07-03T14:00:50.548454" elapsed="3.809700"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-07-03T14:00:56.101775" level="INFO">Successfully initialized new page object and opened url: http://localhost:3002/</msg>
+<msg time="2025-07-03T14:00:56.101942" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>http://localhost:3002/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-07-03T14:00:54.358621" elapsed="1.743603"/>
+</kw>
+<status status="PASS" start="2025-07-03T14:00:50.537460" elapsed="5.565036"/>
+</kw>
+<kw name="Remover usuário por email" owner="Mongo">
+<kw name="Mongo.remove_user_by_email">
+<msg time="2025-07-03T14:00:56.114202" level="FAIL">No keyword with name 'Mongo.remove_user_by_email' found.</msg>
+<var>${deleted_count}</var>
+<arg>${email}</arg>
+<status status="FAIL" start="2025-07-03T14:00:56.113616" elapsed="0.000740">No keyword with name 'Mongo.remove_user_by_email' found.</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${deleted_count} usuário(s) removido(s) do MongoDB</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-03T14:00:56.114705" elapsed="0.000407"/>
+</kw>
+<arg>teste1@gmail.com</arg>
+<status status="FAIL" start="2025-07-03T14:00:56.105788" elapsed="0.009712">No keyword with name 'Mongo.remove_user_by_email' found.</status>
+</kw>
+<kw name="Get fixtures" owner="base">
+<var>${data}</var>
+<arg>tasks</arg>
+<arg>create</arg>
+<status status="NOT RUN" start="2025-07-03T14:00:56.119813" elapsed="0.000380"/>
+</kw>
+<kw name="Go to Sign Up Page" owner="Header">
+<status status="NOT RUN" start="2025-07-03T14:00:56.123171" elapsed="0.000366"/>
+</kw>
+<kw name="Submit task form" owner="TaskCreatePage">
+<arg>${data}</arg>
+<status status="NOT RUN" start="2025-07-03T14:00:56.128176" elapsed="0.000393"/>
+</kw>
+<kw name="User should be logged in" owner="Header">
+<arg>${data}[name]</arg>
+<status status="NOT RUN" start="2025-07-03T14:00:56.131851" elapsed="0.000429"/>
+</kw>
+<kw name="Go to Ver todos os filmes em cartaz" owner="Header">
+<status status="NOT RUN" start="2025-07-03T14:00:56.133286" elapsed="0.000390"/>
+</kw>
+<kw name="Ver detalhes do primeiro filme" owner="MoviesPage">
+<status status="NOT RUN" start="2025-07-03T14:00:56.138734" elapsed="0.000902"/>
+</kw>
+<kw name="Take Screenshot" owner="Browser" type="TEARDOWN">
+<msg time="2025-07-03T14:00:56.999466" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2025-07-03T14:00:56.145206" elapsed="0.854515"/>
+</kw>
+<msg time="2025-07-03T14:00:57.076944" level="INFO">Switching context to context=e9b3757b-b792-4d15-b126-3092868fc329 in CURRENT</msg>
+<msg time="2025-07-03T14:00:57.096224" level="INFO">Successfully changed active context: context=e9b3757b-b792-4d15-b126-3092868fc329</msg>
+<msg time="2025-07-03T14:00:57.326388" level="INFO">Successfully closed Context</msg>
+<status status="FAIL" start="2025-07-03T14:00:50.535865" elapsed="6.494633">No keyword with name 'Mongo.remove_user_by_email' found.</status>
+</test>
+<doc>Cadastra, seleciona filme e assentos, efetua pagamento e desloga</doc>
+<status status="FAIL" start="2025-07-03T14:00:49.160538" elapsed="8.215553"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Create" id="s1" pass="0" fail="1" skip="0">Create</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
