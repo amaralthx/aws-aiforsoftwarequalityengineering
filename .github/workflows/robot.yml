@@ -5,7 +5,7 @@ on:
     branches: [main, develop, cinema-challenge]
   pull_request:
     branches: [main, develop, cinema-challenge]
-
+  workflow_dispatch:
 jobs:
   robot:
     runs-on: ubuntu-latest
