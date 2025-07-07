@@ -1,6 +1,4 @@
-- name: Executar testes Robot Framework
-  run: |
-    xvfb-run robot -d robotfrontend/logs --loglevel TRACE robotfrontend/resources/tests/signup.robot
+name: Robot Framework Tests
 
 on:
   push:
@@ -8,6 +6,7 @@ on:
   pull_request:
     branches: [main, develop, cinema-challenge]
   workflow_dispatch:
+
 jobs:
   robot:
     runs-on: ubuntu-latest
