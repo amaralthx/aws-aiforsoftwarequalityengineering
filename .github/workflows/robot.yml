@@ -2,24 +2,15 @@ name: Robot Framework Tests
 
 on:
   push:
-    branches: [ cinema-challenge ]
+    branches:
+      - cinema-challenge
   pull_request:
-    branches: [ cinema-challenge ]
+    branches:
+      - cinema-challenge
 
 jobs:
   robot:
     runs-on: ubuntu-latest
-
-    services:
-      mongo:
-        image: mongo:5.0
-        ports:
-          - 27017:27017
-        options: >-
-          --health-cmd="mongosh --eval 'db.runCommand({ ping: 1 })'" 
-          --health-interval=10s 
-          --health-timeout=5s 
-          --health-retries=5
 
     steps:
       - name: Checkout do repositório
@@ -38,26 +29,13 @@ jobs:
         run: |
           rfbrowser init
 
-      - name: Instalar dependências do frontend
-        run: |
-          cd robotfrontend
-          npm install
-
-      - name: Iniciar o frontend com npm start (em background)
-        run: |
-          cd robotfrontend
-          nohup npm start &
-
-      - name: Aguardar frontend subir
-        run: sleep 10
-
       - name: Executar testes Robot Framework
         run: |
-          cd robotfrontend
-          robot -d logs resources/**/signup.robot
+          robot -d logs robotfrontend/tests
 
       - name: Upload de logs de execução
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: robot-logs
-          path: robotfrontend/logs
+          path: logs/
