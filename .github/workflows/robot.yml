@@ -42,4 +42,3 @@ jobs:
         with:
           name: robot-logs
           path: robotfrontend/logs/
-✅ 2. Sobre ${usuario} / ${user} não encontrado
