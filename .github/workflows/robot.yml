@@ -27,13 +27,29 @@ jobs:
         with:
           python-version: 3.11
 
-      - name: Instalar dependências do projeto
+      - name: Instalar dependências do projeto Robot Framework
         run: |
           pip install -r robotfrontend/requirements.txt
 
       - name: Inicializar RF Browser
         run: |
           rfbrowser init
+
+      - name: Instalar dependências do frontend
+        run: |
+          cd frontend
+          npm install
+
+      - name: Iniciar o frontend com npm start (em background)
+        run: |
+          cd frontend
+          npm start &
+        env:
+          PORT: 3002
+
+      - name: Aguardar frontend subir
+        run: |
+          npx wait-on http://localhost:3002
 
       - name: Executar testes Robot Framework
         run: |
