@@ -2,11 +2,13 @@ name: Robot Framework Tests
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop, cinema-challenge]
   pull_request:
+    branches: [main, develop, cinema-challenge]
 
 jobs:
   robot:
+    name: Executar testes Robot Framework
     runs-on: ubuntu-latest
 
     env:
@@ -19,23 +21,23 @@ jobs:
         working-directory: robotfrontend
 
     steps:
-      - name: Checkout repo
+      - name: Checkout do repositório
         uses: actions/checkout@v3
 
-      - name: Set up Python
+      - name: Configurar Python 3.11
         uses: actions/setup-python@v4
         with:
           python-version: 3.11
 
-      - name: Install dependencies
+      - name: Instalar dependências do projeto
         run: |
           pip install -r requirements.txt
 
-      - name: Run Robot Tests
+      - name: Executar testes Robot Framework
         run: |
           robot -d logs --loglevel TRACE resources/tests/signup.robot
 
-      - name: Upload Logs
+      - name: Upload de logs de execução
         uses: actions/upload-artifact@v4
         with:
           name: robot-logs
