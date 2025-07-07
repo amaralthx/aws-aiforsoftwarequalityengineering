@@ -9,14 +9,14 @@ jobs:
   robot:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: robotfrontend
-
     env:
       MONGO_URI: ${{ secrets.MONGO_URI }}
       DB_NAME: ${{ secrets.DB_NAME }}
       COLLECTION_NAME: ${{ secrets.COLLECTION_NAME }}
+
+    defaults:
+      run:
+        working-directory: robotfrontend
 
     steps:
       - name: Checkout repo
@@ -36,7 +36,7 @@ jobs:
           robot -d logs --loglevel TRACE resources/tests/signup.robot
 
       - name: Upload Logs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: robot-logs
-          path: logs/
+          path: robotfrontend/logs/
