@@ -1,5 +1,5 @@
 *** Settings ***
-Library    ${EXECDIR}/libs/database.py
+Library    ../libs/database.py
 
 *** Keywords ***
 Remover usuário por email
