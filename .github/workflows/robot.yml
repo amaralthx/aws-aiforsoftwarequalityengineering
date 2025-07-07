@@ -1,4 +1,6 @@
-name: Robot Framework Tests
+- name: Executar testes Robot Framework
+  run: |
+    xvfb-run robot -d robotfrontend/logs --loglevel TRACE robotfrontend/resources/tests/signup.robot
 
 on:
   push:
