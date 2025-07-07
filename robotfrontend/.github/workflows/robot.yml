@@ -10,12 +10,23 @@ jobs:
   robot:
     runs-on: ubuntu-latest
 
+    services:
+      mongo:
+        image: mongo:5.0
+        ports:
+          - 27017:27017
+        options: >-
+          --health-cmd="mongosh --eval 'db.runCommand({ ping: 1 })'" 
+          --health-interval=10s 
+          --health-timeout=5s 
+          --health-retries=5
+
     steps:
       - name: Checkout do repositório
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Configurar Python 3.11
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: 3.11
 
@@ -35,25 +46,18 @@ jobs:
       - name: Iniciar o frontend com npm start (em background)
         run: |
           cd robotfrontend
-          npm start &
-        env:
-          CI: true
+          nohup npm start &
 
       - name: Aguardar frontend subir
-        run: |
-          echo "Esperando o frontend subir..."
-          sleep 10
+        run: sleep 10
 
       - name: Executar testes Robot Framework
         run: |
-          robot -d robotfrontend/logs --loglevel TRACE robotfrontend/resources/**/signup.robot
+          cd robotfrontend
+          robot -d logs resources/**/signup.robot
 
       - name: Upload de logs de execução
-        if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: robot-logs
-          path: |
-            robotfrontend/logs/log.html
-            robotfrontend/logs/report.html
-            robotfrontend/logs/output.xml
+          path: robotfrontend/logs
