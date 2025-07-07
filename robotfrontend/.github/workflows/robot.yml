@@ -2,12 +2,16 @@ name: Robot Framework Tests
 
 on:
   push:
-    branches: [ main, develop, cinema-challenge ]
+    branches: [ main, develop ]
   pull_request:
 
 jobs:
   robot:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: robotfrontend
 
     env:
       MONGO_URI: ${{ secrets.MONGO_URI }}
@@ -25,14 +29,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r robotfrontend/requirements.txt
+          pip install -r requirements.txt
 
       - name: Run Robot Tests
         run: |
-          robot -d robotfrontend/logs --loglevel TRACE robotfrontend/resources/tests/signup.robot
+          robot -d logs --loglevel TRACE resources/tests/signup.robot
 
       - name: Upload Logs
         uses: actions/upload-artifact@v3
         with:
           name: robot-logs
-          path: robotfrontend/logs/
+          path: logs/
