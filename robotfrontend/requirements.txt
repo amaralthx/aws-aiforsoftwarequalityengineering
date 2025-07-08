@@ -1,4 +1,0 @@
-robotframework
-robotframework-browser
-python-dotenv
-pymongo
