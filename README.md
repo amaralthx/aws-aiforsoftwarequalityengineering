@@ -12,7 +12,7 @@ Implementei testes completos para:
 
 ##  Estrutura do Projeto
 
-```bash
+``
 aws-aiforsoftwarequalityengineering/
 └── cinema-challenge/
     ├── cinema-challenge-front/    # Aplicação React (porta 3002)
