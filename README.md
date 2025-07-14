@@ -1,92 +1,74 @@
-# Cinema App – Desafio de Automação de Testes com Robot Framework
+#  Cinema App - Automação de Testes com Robot Framework
 
-Este repositório contém os testes do projeto **Cinema App**, desenvolvidos com **Robot Framework** e **Browser Library** para validação end-to-end.
+##  Visão Geral
+Testes E2E para o sistema Cinema App desenvolvidos com:
+- Robot Framework
+- Browser Library (Playwright)
+- Page Object Pattern
 
-##  O Que Foi Testado
+##  Cenários Testados
+ **Cadastro de Usuário**  
+ **Validações de Formulário**  
+ **Tratamento de Erros**  
+ **Requisitos de Segurança**  
+ **Fluxo de Login**  
 
-Implementei testes completos para:
--  Fluxo completo de cadastro (signup)
--  Validações de formulário
--  Tratamento de erros
--  Requisitos de segurança para senhas
+## 🛠 Pré-requisitos
+- Node.js 16+
+- Python 3.8+
+- Git
+- Navegadores Chrome/Firefox
 
-##  Estrutura do Projeto
+##  Execução Rápida
 
-``
-aws-aiforsoftwarequalityengineering/
-└── cinema-challenge/
-    ├── cinema-challenge-front/    # Aplicação React (porta 3002)
-    ├── cinema-challenge-back/     # API Node.js (porta 3001)
-    └── robotframeworkchallenge/   # Testes
-        ├── resources/
-        │   ├── base/              # Configurações globais
-        │   ├── pages/             # Page Objects
-        │   └── tests/             # Casos de teste
-        ├── results/               # Relatórios de execução
-        └── requirements.txt       # Dependências
-        ├── Planejamento de Teste Challenge Final - Cinema APP.pdf
-    ├──Collections Postman         # Testes manuais backend
-🚀 Como Executar
-Pré-requisitos
-Node.js 16+
-
-Python 3.8+
-
-Git
-
-1. Iniciar Ambiente
-bash
+```bash
+# Clone o projeto
 git clone -b cinema-challenge https://github.com/amaralthx/aws-aiforsoftwarequalityengineering.git
 cd aws-aiforsoftwarequalityengineering/cinema-challenge
-2. Subir Aplicação
-bash
-# Backend (terminal 1)
-cd cinema-challenge-back && npm install && npm run dev
+```
 
-# Frontend (terminal 2)
-cd cinema-challenge-front && npm install && npm run dev
-3. Executar Testes
-bash
+```bash
+# Inicie a aplicação (em terminais separados)
+cd cinema-challenge-back && npm install && npm run dev  # Backend (3001)
+cd cinema-challenge-front && npm install && npm run dev # Frontend (3002)
+```
+
+```bash
+# Execute os testes
 cd robotframeworkchallenge
 pip install -r requirements.txt
-rfbrowser init  # Configura browsers
-
-# Execução completa
+rfbrowser init
 robot -d results resources/tests/
-Testes Implementados
-Por Tags (Execução Seletiva)
-bash
-# Testes positivos (fluxo ideal)
-robot -d results -i happy_path resources/tests/signup.robot
+```
 
-# Testes negativos (validações)
-robot -d results -i validation resources/tests/signup.robot
+ Estrutura do Projeto
+```bash
+cinema-challenge/
+├── cinema-challenge-back/       # API Node.js (3001)
+│   └── Collections Postman/     # Testes manuais
+├── cinema-challenge-front/      # App React (3002)
+└── robotframeworkchallenge/     # Automação
+    ├── resources/
+    │   ├── base/                # Configurações
+    │   ├── pages/               # Page Objects
+    │   └── tests/               # Casos de teste
+    ├── results/                 # Relatórios
+    ├── requirements.txt         # Dependências
+    └── Planejamento de Teste Challenge Final - Cinema APP.pdf
+```
 
-# Testes de segurança (senhas)
-robot -d results -i security resources/tests/signup.robot
+ Tipos de Teste
+Tag	Descrição	Exemplos
+happy_path	Fluxos positivos	Cadastro válido
+validation	Validações	Email inválido
+security	Requisitos de senha	Senha fraca
+smoke	Testes críticos	Login básico
 
-# Smoke test (execução rápida)
-robot -d results -i smoke resources/tests/
-Detalhes dos Casos de Teste
-Tag	Descrição	Cenários Implementados
-happy_path	Fluxos positivos	Cadastro válido, Login bem-sucedido
-validation	Validações de formulário	Email inválido, Campos obrigatórios
-security	Requisitos de senha	Senha fraca, Senha curta
-smoke	Testes críticos	Cadastro + Login básico
-Resultados
-Os relatórios serão gerados em:
+ Relatórios
+results/report.html: Sumário executivo
+results/log.html: Detalhes completos
+results/output.xml: Integração CI/CD
 
-results/report.html: Visão geral
-
-results/log.html: Detalhes de execução
-
-results/output.xml: Dados para CI/CD
-
-Troubleshooting
-Problema comum	Solução
-Erro de conexão	Verifique se frontend/backend estão rodando
-Playwright não instalado	Execute rfbrowser init
-Dependências faltando	pip install -r requirements.txt
-Autora (com ajuda de todos do PB)
-Thaís do Amaral (@amaralthx)
-Desafio completo do programa AWS AI for Software Quality Engineering
+ Autora
+Thaís do Amaral [@amaralthx]
+Com contribuições da turma do PB da AWS
