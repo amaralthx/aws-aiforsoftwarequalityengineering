@@ -1,0 +1,2147 @@
+{
+	"info": {
+		"_postman_id": "ab106e59-b26e-4cf1-82f2-f3139f4e8460",
+		"name": "Cinema APP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44572612"
+	},
+	"item": [
+		{
+			"name": "Visitor",
+			"item": [
+				{
+					"name": "Movies",
+					"item": [
+						{
+							"name": "Get all movies - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get movies by ID - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Reservations",
+					"item": [
+						{
+							"name": "New reservation - 401 UNAUTHORIZED",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"sessionId\": \"685d95ee9580a4e9170e3fa4\",\r\n    \"seats\": [\r\n        {\r\n            \"row\": \"A\",\r\n            \"number\": 1\r\n        },\r\n        {\r\n            \"row\": \"A\",\r\n            \"number\": 2\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/reservations",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"reservations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a reservation no token - 401 UNAUTHORIZED",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/reservations/685d95ee9580a4e9170e3fb5",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"reservations",
+										"685d95ee9580a4e9170e3fb5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Sessions",
+					"item": [
+						{
+							"name": "Get sessions - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Delete session - 401 UNAUTHORIZED",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/sessions/{{session_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"sessions",
+										"{{session_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create new session - 401 UNAUTHORIZED",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/sessions/{{session_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"sessions",
+										"{{session_id}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Theaters",
+					"item": [
+						{
+							"name": "Create new theater - 401 UNAUTHORIZED",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"string\",\r\n  \"capacity\": 1,\r\n  \"type\": \"standard\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/theaters",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"theaters"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Get all users - 401 UNAUTHORIZED",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "Get current user profile - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/auth/me",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"me"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Password error - 400 BAD REQUEST",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Fulano\",\r\n    \"email\": \"fulaninho@example.com\",\r\n    \"password\": \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Name 1 character - 201 CREATED - ISSUE",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Fulano\",\r\n    \"email\": \"fulaninho@example.com\",\r\n    \"password\": \"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Name special character - 201 CREATED - ISSUE",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \";\",\r\n    \"email\": \"testeeee@teste.com\",\r\n    \"password\": \"Senha@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Name 256 characteres - 201 CREATED - OPORTUNITY",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \";\",\r\n    \"email\": \"testeeee@teste.com\",\r\n    \"password\": \"Senha@123\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register a new user - 201 CREATED",
+							"request": {
+								"method": "POST",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Create role admin - 201 CREATED (RETURN USER)",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Thaís teste\",\r\n  \"email\": \"testerole@example.com\",\r\n  \"password\": \"string\",\r\n  \"role\": \"admin\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User already exists - 400 BAD REQUEST",
+							"request": {
+								"method": "POST",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Register invalid email - 400 BAD REQUEST",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Teste\",\r\n  \"email\": \"email_invalido\",\r\n  \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login user valid - 200 OK",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"super.admin@example.com\",\r\n    \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login update password - 401 UNAUTHORIZED - OPORTUNITY",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"super.admin@example.com\",\r\n    \"password\": \"password\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/profile",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update user profile invalid password - 400 BAD REQUEST",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{user_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"{{user}}\",\r\n  \"currentPassword\": \"string\",\r\n  \"newPassword\": \"string\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/profile",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update user profile valid password - 200 OK",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NjQ3MjdmNzNlOGMxZDE3Yzk1MWE2ZSIsImlhdCI6MTc1MTQxMzM3NiwiZXhwIjoxNzUxNDk5Nzc2fQ.UEzmSQfNpTgyjqvBoO6_1_-nY19DK8Kl7gcmkaW5rkY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Teste Update\",\r\n    \"currentPassword\": \"Senha@123\",\r\n    \"newPassword\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/profile",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update role - 401 UNAUTHORIZED",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{user_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Thaís teste\",\r\n  \"currentRole\": \"user\",\r\n  \"newRole\": \"admin\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/profile",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Movies",
+					"item": [
+						{
+							"name": "Get all movies - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get movie by ID - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Create a new movie - 403 FORBIDDEN",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{user_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Teste\",\r\n    \"synopsis\": \"Teste123\",\r\n    \"director\": \"Teste\",\r\n    \"genres\": [\r\n        \"teste\"\r\n    ],\r\n    \"duration\": 10000,\r\n    \"classification\": \"teste\",\r\n    \"poster\": \"teste\",\r\n    \"releaseDate\": \"2025-07-05\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/movies",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a movie - 403 FORBIDDEN",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{user_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/movies",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a movie - 403 FORBIDDEN",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{user_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/movies",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Reservations",
+					"item": [
+						{
+							"name": "Get all reservations for the current user - 200 OK",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{user_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/reservations",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"reservations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all reservations - 403 FORBIDDEN",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Create a new reservation - 201 CREATED - OPORTUNITY",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{user_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"session\": \"60d0fe4f5311236168a109cd\",\r\n  \"seats\": [\r\n    {\r\n      \"row\": \"C\",\r\n      \"number\": 6,\r\n      \"type\": \"full\"\r\n    },\r\n        {\r\n      \"row\": \"C\",\r\n      \"number\": 5,\r\n      \"type\": \"full\"\r\n    }\r\n  ],\r\n  \"paymentMethod\": \"credit_card\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/reservations",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"reservations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Duplicate reservation - 400 BAD REQUEST",
+							"request": {
+								"method": "POST",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "No paymentMethod - 201 CREATED - ISSUE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{user_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"session\": \"685d95ee9580a4e9170e3fa1\",\r\n  \"seats\": [\r\n    {\r\n      \"row\": \"C\",\r\n      \"number\": 1,\r\n      \"type\": \"full\"\r\n    },\r\n        {\r\n      \"row\": \"C\",\r\n      \"number\": 2,\r\n      \"type\": \"full\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/reservations",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"reservations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update reservation status - 403 FORBIDDEN",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/sessions",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"sessions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a reservation - 403 FORBIDDEN",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/sessions",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"sessions"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Sessions",
+					"item": [
+						{
+							"name": "Get all sessions - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get session details - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Seats user - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Create a new session (admin only) - 403 FORBIDDEN",
+							"request": {
+								"method": "POST",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Update a session - 403 FORBIDDEN",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/sessions/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"sessions",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reset all seats - 403 FORBIDDEN",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/sessions/6863f7bc73e8c1d17c95196a",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"sessions",
+										"6863f7bc73e8c1d17c95196a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a session - 403 FORBIDDEN",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/sessions/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"sessions",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Theaters",
+					"item": [
+						{
+							"name": "Get all theaters - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/theaters",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"theaters"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get a theater by ID - 200 OK - CHECAR ISSUE e RETORNO",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{user_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/theaters/685d95ee9580a4e9170e3f9f",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"theaters",
+										"685d95ee9580a4e9170e3f9f"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a new theater - 403 FORBIDDEN",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/theaters",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"theaters"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a theater - 403 FORBIDDEN",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/theaters/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"theaters",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a theater - 403 FORBIDDEN",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/theaters/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"theaters",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Get Profile - 401 UNATURHORIZED - ISSUE",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get all users - 401 UNAUTHORIZED",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/users",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get user by ID - 401 UNAUTHORIZED",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Update a user - 401 UNAUTHORIZED",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Regular User\",\r\n  \"email\": \"user@example.com\",\r\n  \"role\": \"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/users?685d95ee9580a4e9170e3f96",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "685d95ee9580a4e9170e3f96",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a user - 401 UNAUTHORIZED",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{user_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Regular User\",\r\n  \"email\": \"user@example.com\",\r\n  \"role\": \"admin\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/users?685d95ee9580a4e9170e3f96",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "685d95ee9580a4e9170e3f96",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "Login admin valid - 200 OK",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"password123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login admin password invalid - 401 UNAUTHORIZED",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/docs/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"docs",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login update password - 200 OK",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let response = pm.response.json();\r",
+											"if (response.data && response.data.token) {\r",
+											"    pm.environment.set(\"admin_token\", response.data.token);\r",
+											"} else {\r",
+											"    console.warn(\"Token not found in response\");\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"password1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Profile - 200 OK",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let response = pm.response.json();\r",
+											"pm.environment.set(\"admin_token\", response.data.token);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Admin User\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/profile",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"profile"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get current user profile - 200 OK",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/auth/me",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"me"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Movies",
+					"item": [
+						{
+							"name": "Get all movies - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get movie by ID - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Create a new movie (admin only) - 201 CREATED",
+							"request": {
+								"method": "POST",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Create with no title or incorrect releaseDate - 400 BAD REQUEST",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Teste\",\r\n    \"synopsis\": \"Teste\",\r\n    \"director\": \"Teste\",\r\n    \"genres\": [\r\n        \"Teste\"\r\n    ],\r\n    \"duration\": 0,\r\n    \"classification\": \"Teste\",\r\n    \"poster\": \"Teste\",\r\n    \"releaseDate\": \"2025-15-01\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/movies",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a movie (admin only) - 200 OK",
+							"request": {
+								"method": "PUT",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a movie (admin only) - 200 OK",
+							"request": {
+								"method": "DELETE",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Reservations",
+					"item": [
+						{
+							"name": "Get all reservations (admin only) - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get all reservations for the current user - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get reservation by ID - 200 OK",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"sessionId\": \"685d95ee9580a4e9170e3fa4\",\r\n    \"seats\": [\r\n        {\r\n            \"row\": \"A\",\r\n            \"number\": 1\r\n        },\r\n        {\r\n            \"row\": \"A\",\r\n            \"number\": 2\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/reservations",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"reservations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a new reservation - 200 OK",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/reservations/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"reservations",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update reservation status - 200 OK - ISSUE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"status\": \"pending\",\r\n  \"paymentStatus\": \"pending\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/reservations/685de1cdd68d286ea5a50ea4",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"reservations",
+										"685de1cdd68d286ea5a50ea4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update reservation status - 200 OK - ISSUE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"status\": \"pending\",\r\n  \"paymentStatus\": \"pending\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/reservations/685de1cdd68d286ea5a50ea4",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"reservations",
+										"685de1cdd68d286ea5a50ea4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete reservation user - 200 OK",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/reservations/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"reservations",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Sessions",
+					"item": [
+						{
+							"name": "Get all movie sessions - 200 OK",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/sessions",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"sessions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get a session by ID - 200 OK",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"status\": \"pending\",\r\n  \"paymentStatus\": \"pending\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/sessions/685d95ee9580a4e9170e3fa4",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"sessions",
+										"685d95ee9580a4e9170e3fa4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a session check (admin only) - 404 NOT FOUND",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/sessions/685e186fd68d286ea5a50eea",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"sessions",
+										"685e186fd68d286ea5a50eea"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Seats admin - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Create a new session (admin only) - 201 CREATED",
+							"request": {
+								"method": "POST",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Update a session (admin only) - 200 OK",
+							"request": {
+								"method": "PUT",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Reset all seats - 200 OK",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/sessions/685d95ee9580a4e9170e3fa4/reset-seats",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"sessions",
+										"685d95ee9580a4e9170e3fa4",
+										"reset-seats"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a session (admin only) - 200 OK",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/sessions/685e186fd68d286ea5a50eea",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"sessions",
+										"685e186fd68d286ea5a50eea"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a session with reservation - 200 OK - ISSUE",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/sessions/685d95ee9580a4e9170e3fa1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"sessions",
+										"685d95ee9580a4e9170e3fa1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Theaters",
+					"item": [
+						{
+							"name": "Get all theaters - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get theater by ID - 200 OK",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/theaters",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"theaters"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a new theater - 201 CREATED",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Teste Criando\",\r\n    \"capacity\": 1500,\r\n    \"type\": \"standard\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/theaters",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"theaters"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a theater - 200 OK",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Teste Modificando\",\r\n    \"capacity\": 1500,\r\n    \"type\": \"standard\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/theaters/68645dba73e8c1d17c951a0c",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"theaters",
+										"68645dba73e8c1d17c951a0c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a theater - 200 OK",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/theaters/68645ec473e8c1d17c951a1c",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"theaters",
+										"68645ec473e8c1d17c951a1c"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "Get all users - 200 OK",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get user by ID - 200 OK",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/users/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a user - 200 OK",
+							"request": {
+								"method": "PUT",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a user - 200 OK",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/users/685dbba4d81fa5fca8e4c0f8",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"685dbba4d81fa5fca8e4c0f8"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

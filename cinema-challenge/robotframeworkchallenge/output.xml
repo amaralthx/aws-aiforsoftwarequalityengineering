@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.4 on win32)" generated="2025-07-09T12:04:00.910961" rpa="false" schemaversion="5">
+<suite id="s1" name="Teste" source="C:\Users\thais\OneDrive\Documents\robotfrontend\teste.robot">
+<test id="s1-t1" name="Verifica Keyword" line="5">
+<kw name="Get User" owner="database">
+<msg time="2025-07-09T12:04:09.931117" level="FAIL">OperationFailure: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}</msg>
+<var>${user}</var>
+<arg>thais@yahoo.com</arg>
+<status status="FAIL" start="2025-07-09T12:04:05.608112" elapsed="4.335602">OperationFailure: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${user}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-07-09T12:04:09.944215" elapsed="0.000065"/>
+</kw>
+<status status="FAIL" start="2025-07-09T12:04:05.606296" elapsed="4.338635">OperationFailure: bad auth : authentication failed, full error: {'ok': 0, 'errmsg': 'bad auth : authentication failed', 'code': 8000, 'codeName': 'AtlasError'}</status>
+</test>
+<status status="FAIL" start="2025-07-09T12:04:00.918560" elapsed="9.027656"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Teste" id="s1" pass="0" fail="1" skip="0">Teste</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
