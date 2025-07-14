@@ -1,7 +1,7 @@
 #  Cinema App - Automação de Testes com Robot Framework
 
 ##  Visão Geral
-Testes E2E para o sistema Cinema App desenvolvidos com:
+Testes para o sistema Cinema App desenvolvidos com:
 - Robot Framework
 - Browser Library (Playwright)
 - Page Object Pattern
@@ -13,7 +13,7 @@ Testes E2E para o sistema Cinema App desenvolvidos com:
  **Requisitos de Segurança**  
  **Fluxo de Login**  
 
-## 🛠 Pré-requisitos
+##  Pré-requisitos
 - Node.js 16+
 - Python 3.8+
 - Git
@@ -41,11 +41,10 @@ rfbrowser init
 robot -d results resources/tests/
 ```
 
- Estrutura do Projeto
+## Estrutura do Projeto
 ```bash
 cinema-challenge/
 ├── cinema-challenge-back/       # API Node.js (3001)
-│   └── Collections Postman/     # Testes manuais
 ├── cinema-challenge-front/      # App React (3002)
 └── robotframeworkchallenge/     # Automação
     ├── resources/
@@ -55,20 +54,21 @@ cinema-challenge/
     ├── results/                 # Relatórios
     ├── requirements.txt         # Dependências
     └── Planejamento de Teste Challenge Final - Cinema APP.pdf
+├── Collections Postman/         # Testes manuais
 ```
 
- Tipos de Teste
+## Tipos de Teste
 Tag	Descrição	Exemplos
 happy_path	Fluxos positivos	Cadastro válido
 validation	Validações	Email inválido
 security	Requisitos de senha	Senha fraca
 smoke	Testes críticos	Login básico
 
- Relatórios
+## Relatórios
 results/report.html: Sumário executivo
 results/log.html: Detalhes completos
 results/output.xml: Integração CI/CD
 
- Autora
+## Autora
 Thaís do Amaral [@amaralthx]
 Com contribuições da turma do PB da AWS
