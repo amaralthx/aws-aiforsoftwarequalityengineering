@@ -65,11 +65,13 @@ cinema-challenge/
 | `security`   | Requisitos de senha        | Senha fraca         | 
 | `smoke`      | Testes críticos            | Login básico        |
 
-## Relatórios
- -results/report.html: Sumário executivo
- -results/log.html: Detalhes completos
- -results/output.xml: Integração CI/CD
+##  Relatórios
 
-## Autora
- -Thaís do Amaral [@amaralthx]
- -Com contribuições da turma do PB da AWS
+- `results/report.html`: Sumário executivo  
+- `results/log.html`: Detalhes completos  
+- `results/output.xml`: Integração CI/CD  
+
+##  Autora
+
+- **Thaís do Amaral** [@amaralthx]  
+- Com contribuições da turma do PB da AWS  
