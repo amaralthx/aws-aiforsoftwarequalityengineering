@@ -58,16 +58,17 @@ cinema-challenge/
 ```
 
 ## Tipos de Teste
-Tag	Descrição	Exemplos
-happy_path	Fluxos positivos	Cadastro válido
-validation	Validações	Email inválido
-security	Requisitos de senha	Senha fraca
-smoke	Testes críticos	Login básico
+| Tag          | Descrição                  | Exemplos            |
+|--------------|----------------------------|---------------------|
+| `happy_path` | Fluxos positivos           | Cadastro válido     |
+| `validation` | Validações de formulário   | Email inválido      |
+| `security`   | Requisitos de senha        | Senha fraca         | 
+| `smoke`      | Testes críticos            | Login básico        |
 
 ## Relatórios
-results/report.html: Sumário executivo
-results/log.html: Detalhes completos
-results/output.xml: Integração CI/CD
+**results/report.html: Sumário executivo
+**results/log.html: Detalhes completos
+**results/output.xml: Integração CI/CD
 
 ## Autora
 Thaís do Amaral [@amaralthx]
